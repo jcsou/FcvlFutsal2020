@@ -1,0 +1,21 @@
+//COMPOSANTS
+npm install axios --save
+-
+npm install router --save
+npm install vue-material --save
+-
+npm install xlsx --save 
+npm install vue-js-xlsx --save
+-
+npm install
+
+// DEV EXEC
+npm run serve
+
+// TO PROD
+npm run-script build
+
+VIDEO
+ROUTER : https://www.youtube.com/watch?v=mY2MiaYiSdw
+json-to-excel : https://lovemewithoutall.github.io/it/json-to-excel/
+SheetJS Tutorial : https://www.youtube.com/watch?v=FymC0XlK0Gs

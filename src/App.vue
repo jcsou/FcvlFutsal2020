@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="FCVL logo" src="./assets/logo.png" width="50">
+    <Accueil msg="Tournoi en salle 2020 -  F.C. Val du Loir "/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Accueil from './components/Accueil.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Accueil
   }
 }
 </script>
