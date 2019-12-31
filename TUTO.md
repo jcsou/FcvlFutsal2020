@@ -3,6 +3,7 @@ npm install axios --save
 -
 npm install jquery --save 
 npm install router --save
+npm install vue-router --save
 npm install vue-material --save
 npm install vue-popperjs --save
 -- load scripts : 

@@ -2,18 +2,12 @@
   <div class="wrapper">
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="./img/sidebar-1.jpg">
        <div class="logo">
-        <a href="./" class="simple-text logo-normal">
-          Creative Tim
-        </a>
+        <a href="./" class="simple-text logo-normal"><img src="./assets/logo.png" alt="LogoFcvl Logo" height="30"> FCVL Futsal 2020</a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active ">
-            <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/Accueil"><a class="nav-link"><i class="material-icons">dashboard</i><p>Acceuil</p></a></router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U9Poules"><a class="nav-link"><i class="material-icons">content_paste</i> U9 - Poules</a></router-link>
         </ul>
       </div>
     </div>
@@ -34,68 +28,19 @@
         </nav>
         <div class="content">
           <div class="container-fluid">
-            <div class="row">
-                <div id="app">
+                <router-view/>
+                <!-- <div id="app">
                 <Accueil msg="Welcome to Your Vue.js App"/>
-                </div>
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header card-header-primary">
-                    <h4 class="card-title ">Simple Table</h4>
-                    <p class="card-category"> Here is a subtitle for this table</p>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead class=" text-primary">
-                          <th>
-                            ID
-                          </th>
-                          <th>
-                            Name
-                          </th>
-                          <th>
-                            Country
-                          </th>
-                          <th>
-                            City
-                          </th>
-                          <th>
-                            Salary
-                          </th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              1
-                            </td>
-                            <td>
-                              Dakota Rice
-                            </td>
-                            <td>
-                              Niger
-                            </td>
-                            <td>
-                              Oud-Turnhout
-                            </td>
-                            <td class="text-primary">
-                              $36,738
-                            </td>
-                          </tr>
-                          </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </div>                           
+                <U9Poules/> -->
           </div>
         </div>
         <footer class="footer">
         <div class="container-fluid">
           <div class="copyright float-right">
-            &copy;2020, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            &copy;2020 JcSouvignet, 
+            Avec <a href="https://vuejs.org/" target="_blank"><img src="https://vuejs.org/images/logo.png" alt="VueJS Logo" height="16">VueJS</a>,
+            et Template de presentation <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
         </div>
         </footer>
@@ -105,13 +50,11 @@
 
 <script>
 
-import Accueil from './components/Accueil.vue'
+// import Accueil from './components/Accueil.vue'
+// import U9Poules from './components/U9Poules.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Accueil
-  }
+  name: 'app'
 }
 </script>
 
