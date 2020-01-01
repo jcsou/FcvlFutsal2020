@@ -21,10 +21,10 @@
               <th>Equipe2</th>
             </thead>
             <tbody>
-              <tr v-for="match in matchsPouleA" :key="match.id">
+              <tr v-for="match in dataPage.matchsPoules" :key="match.id">
                 <td>{{match.id}}</td>
                 <td>{{match.equipe1}}</td>
-                <td v-if="match.but2==='' && match.but2===''" class="text-salle">{{match.horaire}}-{{match.salle}}</td>
+                <td v-if="match.but2==='' && match.but2===''" class="text-salle">{{match.horaire}} - {{match.salle}}</td>
                 <td v-else class="text-score">{{match.but1}} - {{match.but2}}</td>
                 <td>{{match.equipe2}}</td>
               </tr>
@@ -48,7 +48,7 @@
               <th>Diff Buts</th>
             </thead>
             <tbody>
-              <tr v-for="equipe in classementPouleA" :key="equipe.nom">
+              <tr v-for="equipe in dataPage.classementPouleA" :key="equipe.nom">
                 <td>{{equipe.rang}}</td>
                 <td>{{equipe.nom}}</td>
                 <td>{{equipe.points}}</td>
@@ -67,16 +67,18 @@
   /* eslint-disable */
   import XLSX from "xlsx";
   import axios from "axios";
+  // import { match } from 'minimatch';
 
   export default {
     name: "U9Poules",
     data() {
       return {
-        url: "https://fcvalduloir.pagesperso-orange.fr/TES2020/data/20_U9_2020a10-V2.ods",
-        // url: "./data/20_U9_2020a10-V2.ods",
-        dataPoules: null,
-        classementPouleA: null,
-        matchsPouleA: null
+        // url: "https://fcvalduloir.pagesperso-orange.fr/TES2020/data/20_U9_2020a10-V2.ods",
+        url: process.env.VUE_APP_DATA_URL + "data/20_U9_2020a10-V2.ods",
+        dataPage: {
+          classementPouleA: null,
+          matchsPoules: null
+        }
       };
     },
     created() {
@@ -85,6 +87,15 @@
     methods: {
       update(){
         this.loadDataOds();
+      },
+      filterPoule(matchs, filtre){
+        matchsPoulesFiletered: {};
+        for (match in matchs) {
+          if (match.poule=filtre) {
+          }
+        }
+        // return matchsPoulesFiletered;
+        return matchs;
       },
       loadDataOds() {
         const pageContexte = this;
@@ -99,8 +110,8 @@
           let poulessheet = dataOds.Sheets["Poules"];
           // console.log(poulessheet);
           
-          // Gestion des MATCHS POULE A
-          var matchsPouleATMP = new Array();
+          // Gestion des MATCHS POULES
+          var matchsPoulesTMP = new Array();
           var match = {};
           for (var i = 14; i < 25; i++) {
             var butE1 = "";
@@ -116,16 +127,17 @@
               match = {
                 id: poulessheet["C" + i].w,
                 salle: poulessheet["D" + i].w,
+                poule: poulessheet["E" + i].w,
                 horaire: poulessheet["F" + i].w,
                 equipe1: poulessheet["G" + i].w,
                 equipe2: poulessheet["L" + i].w,
                 but1: butE1,
                 but2: butE2, 
               };
-              matchsPouleATMP.push(match);
+              matchsPoulesTMP.push(match);
             }
           }
-          pageContexte.matchsPouleA = matchsPouleATMP;
+          pageContexte.dataPage.matchsPoules = matchsPoulesTMP;
 
           // Gestion des CLASSEMENT POULE A
           var classementPouleATMP = new Array();
@@ -144,7 +156,7 @@
             classementPouleATMP.push(equipe);
             
           }
-          pageContexte.classementPouleA = classementPouleATMP;
+          pageContexte.dataPage.classementPouleA = classementPouleATMP;
           return dataOds;
         });
       }
