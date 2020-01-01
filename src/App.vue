@@ -21,8 +21,14 @@
           </router-link>
           <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U9Poules">
             <a class="nav-link">
-              <i class="material-icons">content_paste</i>
+              <i class="material-icons">vertical_split</i>
               <p>U9 - Poules</p>
+            </a>
+          </router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U9Finales">
+            <a class="nav-link">
+              <i class="material-icons">line_weight</i>
+              <p>U9 - Finales</p>
             </a>
           </router-link>
         </ul>
@@ -31,9 +37,9 @@
     <div class="main-panel">
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
         <div class="container-fluid">
-          <div class="navbar-wrapper"> 
+          <div class="navbar-wrapper text-bandeauHaut"> 
             <router-link tag="a" class="navbar-brand " to="/Accueil">
-              <h2><img src="./assets/logo.png" alt="LogoFcvl Logo" height="40"/> FCVL Tournoi Futsal</h2>
+              <img src="./assets/logo.png" alt="LogoFcvl Logo" height="35"/> FCVL Futsal 2020
             </router-link>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,6 +92,16 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+
+  .text-bandeauHaut {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .text-accueil {
+    text-align: center;
+    font-weight: bold;
+    color: #0000EE;
   }
 
   .text-score {
