@@ -26,14 +26,8 @@
           <div class='navbar-form' style='display:none;'></div>
         </div>
         </nav>
-        <div class="content">
-          <div class="container-fluid">
-                <router-view/>
-                <!-- <div id="app">
-                <Accueil msg="Welcome to Your Vue.js App"/>
-                </div>                           
-                <U9Poules/> -->
-          </div>
+        <div class="content">          
+          <router-view/>
         </div>
         <footer class="footer">
         <div class="container-fluid">
@@ -70,5 +64,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+
+td.text-score {
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+td.text-salle {
+    font-size: 0.750rem;
+    text-align: center;
+    font-style: italic;
 }
 </style>
