@@ -15,6 +15,8 @@ npm install vue-js-xlsx --save
 
 -- Theme : material-dashboard-master
 https://demos.creative-tim.com/material-dashboard/examples/dashboard.html
+DOCS : 
+https://demos.creative-tim.com/bs3/material-dashboard/documentation/tutorial-components.html
 
 npm install
 

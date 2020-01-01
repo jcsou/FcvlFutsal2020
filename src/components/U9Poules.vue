@@ -2,31 +2,31 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <button @click="update()" class="btn btn-primary pull-right"> <i _ngcontent-pro-c19="" class="material-icons icon-image-preview">loop</i> Synchroniser</button>
+       <h3>U9 Phase de poule</h3>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6 col-md-12">
       <!-- MATCH PA--> 
       <div class="card">
-        <div class="card-header card-header-primary">
-          <h4 class="card-title">U9 - Poule A - Les Matchs</h4> 
+        <div class="card-header card-header-info">
+          <h4 class="card-title">U9 - Poule A - Les Matchs <button @click="update()" class="btn btn-default pull-right " style="height=15px;"><i _ngcontent-pro-c19="" class="material-icons icon-image-preview">loop</i></button></h4> 
         </div>
         <div class="card-body table-responsive">
           <table class="table table-hover">
-            <thead class="text-primary">
-              <th>Nu</th>
-              <th>Equipe1</th>
-              <th>Score</th>
-              <th>Equipe2</th>
+            <thead class="text-info">
+              <th class="text-coltitle">Nu</th>
+              <th class="text-coltitle">Equipe1</th>
+              <th class="text-coltitle">Score</th>
+              <th class="text-coltitle">Equipe2</th>
             </thead>
             <tbody>
-              <tr v-for="match in dataPage.matchsPoules" :key="match.id">
-                <td>{{match.id}}</td>
-                <td>{{match.equipe1}}</td>
+              <tr v-for="match in dataPage.matchsPouleA" :key="match.id">
+                <td class="text-id">{{match.id}}</td>
+                <td class="text-eq1">{{match.equipe1}}</td>
                 <td v-if="match.but2==='' && match.but2===''" class="text-salle">{{match.horaire}} - {{match.salle}}</td>
                 <td v-else class="text-score">{{match.but1}} - {{match.but2}}</td>
-                <td>{{match.equipe2}}</td>
+                <td class="text-eq2">{{match.equipe2}}</td>
               </tr>
             </tbody>
           </table>
@@ -36,23 +36,78 @@
     <div class="col-lg-6 col-md-12">
       <!-- CLASSEMENT PA--> 
       <div class="card">
-        <div class="card-header card-header-primary">
+        <div class="card-header card-header-info">
           <h4 class="card-title">U9 - Poule A - Classement </h4>
         </div>
         <div class="card-body table-responsive">
           <table class="table table-hover">
-            <thead class="text-primary">
-              <th>Rang</th>
-              <th>Equipe</th>
-              <th>Points</th>
-              <th>Diff Buts</th>
+            <thead class="text-info">
+              <th class="text-coltitle">Rang</th>
+              <th class="text-coltitle">Equipe</th>
+              <th class="text-coltitle">Points</th>
+              <th class="text-coltitle">Diff Buts</th>
             </thead>
             <tbody>
               <tr v-for="equipe in dataPage.classementPouleA" :key="equipe.nom">
-                <td>{{equipe.rang}}</td>
-                <td>{{equipe.nom}}</td>
-                <td>{{equipe.points}}</td>
-                <td>{{equipe.diffButs}}</td>
+                <td class="text-id">{{equipe.rang}}</td>
+                <td class="text-classement">{{equipe.nom}}</td>
+                <td class="text-classement">{{equipe.points}}</td>
+                <td class="text-classement">{{equipe.diffButs}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <!-- MATCH PA--> 
+      <div class="card">
+        <div class="card-header card-header-warning">
+          <h4 class="card-title">U9 - Poule B - Les Matchs <button @click="update()" class="btn btn-default pull-right " style="height=15px;"><i _ngcontent-pro-c19="" class="material-icons icon-image-preview">loop</i></button></h4> 
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead class="text-warning">
+              <th class="text-coltitle">Nu</th>
+              <th class="text-coltitle">Equipe1</th>
+              <th class="text-coltitle">Score</th>
+              <th class="text-coltitle">Equipe2</th>
+            </thead>
+            <tbody>
+              <tr v-for="match in dataPage.matchsPouleB" :key="match.id">
+                <td class="text-id">{{match.id}}</td>
+                <td class="text-eq1">{{match.equipe1}}</td>
+                <td v-if="match.but2==='' && match.but2===''" class="text-salle">{{match.horaire}} - {{match.salle}}</td>
+                <td v-else class="text-score">{{match.but1}} - {{match.but2}}</td>
+                <td class="text-eq2">{{match.equipe2}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <!-- CLASSEMENT PA--> 
+      <div class="card">
+        <div class="card-header card-header-warning">
+          <h4 class="card-title">U9 - Poule B - Classement </h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead class="text-warning">
+              <th class="text-coltitle">Rang</th>
+              <th class="text-coltitle">Equipe</th>
+              <th class="text-coltitle">Points</th>
+              <th class="text-coltitle">Diff Buts</th>
+            </thead>
+            <tbody>
+              <tr v-for="equipe in dataPage.classementPouleB" :key="equipe.nom">
+                <td class="text-id">{{equipe.rang}}</td>
+                <td class="text-classement">{{equipe.nom}}</td>
+                <td class="text-classement">{{equipe.points}}</td>
+                <td class="text-classement">{{equipe.diffButs}}</td>
               </tr>
             </tbody>
           </table>
@@ -73,11 +128,12 @@
     name: "U9Poules",
     data() {
       return {
-        // url: "https://fcvalduloir.pagesperso-orange.fr/TES2020/data/20_U9_2020a10-V2.ods",
         url: process.env.VUE_APP_DATA_URL + "data/20_U9_2020a10-V2.ods",
         dataPage: {
           classementPouleA: null,
-          matchsPoules: null
+          classementPouleB: null,
+          matchsPouleA: null,
+          matchsPouleB: null,
         }
       };
     },
@@ -87,15 +143,6 @@
     methods: {
       update(){
         this.loadDataOds();
-      },
-      filterPoule(matchs, filtre){
-        matchsPoulesFiletered: {};
-        for (match in matchs) {
-          if (match.poule=filtre) {
-          }
-        }
-        // return matchsPoulesFiletered;
-        return matchs;
       },
       loadDataOds() {
         const pageContexte = this;
@@ -110,8 +157,8 @@
           let poulessheet = dataOds.Sheets["Poules"];
           // console.log(poulessheet);
           
-          // Gestion des MATCHS POULES
-          var matchsPoulesTMP = new Array();
+          // Gestion des MATCHS POULE A
+          var matchsPouleATMP = new Array();
           var match = {};
           for (var i = 14; i < 25; i++) {
             var butE1 = "";
@@ -134,10 +181,39 @@
                 but1: butE1,
                 but2: butE2, 
               };
-              matchsPoulesTMP.push(match);
+              matchsPouleATMP.push(match);
             }
           }
-          pageContexte.dataPage.matchsPoules = matchsPoulesTMP;
+          pageContexte.dataPage.matchsPouleA = matchsPouleATMP;
+
+          // Gestion des MATCHS POULE B
+          var matchsPouleBTMP = new Array();
+          var match = {};
+          for (var i = 35; i < 46; i++) {
+            var butE1 = "";
+            var butE2 = "";
+            if (i != 41) {
+              if (typeof poulessheet["I" + i] != "undefined") {
+                butE1 = poulessheet["I" + i].w;
+              }
+              if (typeof poulessheet["J" + i] != "undefined") {
+                butE2 = poulessheet["J" + i].w;
+              }
+
+              match = {
+                id: poulessheet["C" + i].w,
+                salle: poulessheet["D" + i].w,
+                poule: poulessheet["E" + i].w,
+                horaire: poulessheet["F" + i].w,
+                equipe1: poulessheet["G" + i].w,
+                equipe2: poulessheet["L" + i].w,
+                but1: butE1,
+                but2: butE2, 
+              };
+              matchsPouleBTMP.push(match);
+            }
+          }
+          pageContexte.dataPage.matchsPouleB = matchsPouleBTMP;
 
           // Gestion des CLASSEMENT POULE A
           var classementPouleATMP = new Array();
@@ -154,9 +230,26 @@
               diffButs: poulessheet["S" + i].w,
             };
             classementPouleATMP.push(equipe);
-            
           }
           pageContexte.dataPage.classementPouleA = classementPouleATMP;
+
+          // Gestion des CLASSEMENT POULE B
+          var classementPouleBTMP = new Array();
+          var equipe = {};
+          for (var i = 37; i < 42; i++) {
+            var rangE = "";
+            if (typeof poulessheet["P" + i] != "undefined") {
+              rangE = poulessheet["P" + i].w;
+            }
+            equipe = {
+              rang: rangE,
+              nom: poulessheet["Q" + i].w,
+              points: poulessheet["R" + i].w,
+              diffButs: poulessheet["S" + i].w,
+            };
+            classementPouleBTMP.push(equipe);
+          }
+          pageContexte.dataPage.classementPouleB = classementPouleBTMP;
           return dataOds;
         });
       }
