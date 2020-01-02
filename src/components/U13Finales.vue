@@ -63,12 +63,13 @@
   /* eslint-disable */
   import XLSX from "xlsx";
   import axios from "axios";
+  // import { match } from 'minimatch';
 
   export default {
     data() {
       return {
-        categorie: "U9",
-        url: process.env.VUE_APP_DATA_URL + "data/20_U9_2020a10-V2.ods",
+        categorie: "U13",
+        url: process.env.VUE_APP_DATA_URL + "data/50_U13_2020a16-V2.ods",
         dataPage: {
           classement: null,
           matchs: null,
@@ -98,12 +99,12 @@
           // MATCHS
           var matchsTMP = new Array();
           var match = {};
-          for (var i = 52; i < 64; i++) {
+          for (var i = 50; i < 66; i++) {
             var butE1 = "";
             var butE2 = "";
             var E1 = "";
             var E2 = "";
-            if (i != 57 && i != 62) {
+            if (i != 66) {
               if (typeof poulessheet["I" + i] != "undefined") {
                 butE1 = poulessheet["I" + i].w;
               }
@@ -134,13 +135,13 @@
           // CLASSEMENT
           var classementTMP = new Array();
           var equipe = {};
-          for (var i = 6; i < 16; i++) {
+          for (var i = 5; i < 21; i++) {
             var nomE = "";
-            if (typeof finalesheet["L" + i] != "undefined") {
-              nomE = finalesheet["L" + i].w;
+            if (typeof finalesheet["M" + i] != "undefined") {
+              nomE = finalesheet["M" + i].w;
             }
             equipe = {
-              rang: finalesheet["K" + i].w,
+              rang: finalesheet["L" + i].w,
               nom: nomE
             };
             classementTMP.push(equipe);

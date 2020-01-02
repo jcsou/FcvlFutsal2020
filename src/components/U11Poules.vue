@@ -126,8 +126,8 @@
   export default {
     data() {
       return {
-        categorie: "U9",
-        url: process.env.VUE_APP_DATA_URL + "data/20_U9_2020a10-V2.ods",
+        categorie: "U11",
+        url: process.env.VUE_APP_DATA_URL + "data/30_U11_2020a12-V2.ods",
         dataPage: {
           classementPouleA: null,
           classementPouleB: null,
@@ -158,10 +158,10 @@
           // Gestion des MATCHS POULE A
           var matchsPouleATMP = new Array();
           var match = {};
-          for (var i = 14; i < 25; i++) {
+          for (var i = 15; i < 31; i++) {
             var butE1 = "";
             var butE2 = "";
-            if (i != 20) {
+            if (i != 24) {
               if (typeof poulessheet["I" + i] != "undefined") {
                 butE1 = poulessheet["I" + i].w;
               }
@@ -187,10 +187,10 @@
           // Gestion des MATCHS POULE B
           var matchsPouleBTMP = new Array();
           var match = {};
-          for (var i = 35; i < 46; i++) {
+          for (var i = 42; i < 58; i++) {
             var butE1 = "";
             var butE2 = "";
-            if (i != 41) {
+            if (i != 51) {
               if (typeof poulessheet["I" + i] != "undefined") {
                 butE1 = poulessheet["I" + i].w;
               }
@@ -216,7 +216,7 @@
           // Gestion des CLASSEMENT POULE A
           var classementPouleATMP = new Array();
           var equipe = {};
-          for (var i = 16; i < 21; i++) {
+          for (var i = 16; i < 22; i++) {
             var rangE = "";
             if (typeof poulessheet["P" + i] != "undefined") {
               rangE = poulessheet["P" + i].w;
@@ -234,7 +234,7 @@
           // Gestion des CLASSEMENT POULE B
           var classementPouleBTMP = new Array();
           var equipe = {};
-          for (var i = 37; i < 42; i++) {
+          for (var i = 27; i < 33; i++) {
             var rangE = "";
             if (typeof poulessheet["P" + i] != "undefined") {
               rangE = poulessheet["P" + i].w;

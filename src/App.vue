@@ -31,6 +31,30 @@
               <p>U9 - Finales</p>
             </a>
           </router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U11Poules">
+            <a class="nav-link">
+              <i class="material-icons">vertical_split</i>
+              <p>U11 - Poules</p>
+            </a>
+          </router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U11Finales">
+            <a class="nav-link">
+              <i class="material-icons">line_weight</i>
+              <p>U11 - Finales</p>
+            </a>
+          </router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U13Poules">
+            <a class="nav-link">
+              <i class="material-icons">vertical_split</i>
+              <p>U13 - Poules</p>
+            </a>
+          </router-link>
+          <router-link tag="li" class="nav-link" active-class="nav-link active" to="/U13Finales">
+            <a class="nav-link">
+              <i class="material-icons">line_weight</i>
+              <p>U13 - Finales</p>
+            </a>
+          </router-link>
         </ul>
       </div>
     </div>

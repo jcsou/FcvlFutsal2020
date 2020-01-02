@@ -81,6 +81,10 @@
           <div class="card-footer">
             <div class="stats">
               <a href="./pdf/01_ReglementTournoi2020.pdf" class="nav-link" target="_reglement"><p><i class="material-icons">sports</i> R&eacute;glement</p></a>
+              <br>
+              <a href="./img/PlanAcces.JPG" class="nav-link" target="_reglement"><p><i class="material-icons">room</i>Plan d'acc&egrave;s</p></a>
+              <br>
+              <a href="./img/QRsite.png" class="nav-link" target="_reglement"><p><i class="material-icons">share</i>QRCode URL</p></a>
             </div>
           </div>
         </div>
