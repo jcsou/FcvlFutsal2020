@@ -344,7 +344,7 @@
           for (var i = 14; i < 18; i++) {
             var rangE = "";
             if (typeof poulessheet["O" + i] != "undefined") {
-              rangE = poulessheet["0" + i].w;
+              rangE = poulessheet["O" + i].w;
             }
             equipe = {
               rang: rangE,
@@ -362,7 +362,7 @@
           for (var i = 22; i < 26; i++) {
             var rangE = "";
             if (typeof poulessheet["O" + i] != "undefined") {
-              rangE = poulessheet["0" + i].w;
+              rangE = poulessheet["O" + i].w;
             }
             equipe = {
               rang: rangE,
@@ -380,7 +380,7 @@
           for (var i = 36; i < 40; i++) {
             var rangE = "";
             if (typeof poulessheet["O" + i] != "undefined") {
-              rangE = poulessheet["0" + i].w;
+              rangE = poulessheet["O" + i].w;
             }
             equipe = {
               rang: rangE,
@@ -398,7 +398,7 @@
           for (var i = 44; i < 48; i++) {
             var rangE = "";
             if (typeof poulessheet["O" + i] != "undefined") {
-              rangE = poulessheet["0" + i].w;
+              rangE = poulessheet["O" + i].w;
             }
             equipe = {
               rang: rangE,
